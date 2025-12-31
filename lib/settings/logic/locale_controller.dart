@@ -13,8 +13,8 @@ class LocaleController extends ChangeNotifier {
 
   Future<void> _loadLocale() async {
     try {
-      final code = SharedPrefHelper.getString(_localeKey) ?? 'en';
-      _locale = Locale(code);
+      final code = await SharedPrefHelper.getString(_localeKey);
+      _locale = Locale(code.isEmpty ? 'en' : code);
       notifyListeners();
     } catch (e) {
       _locale = const Locale('en');
@@ -25,10 +25,9 @@ class LocaleController extends ChangeNotifier {
     try {
       await SharedPrefHelper.setData(_localeKey, languageCode);
       _locale = Locale(languageCode);
-      
       notifyListeners();
     } catch (e) {
-      print(e);      
+      print(e);
     }
   }
 

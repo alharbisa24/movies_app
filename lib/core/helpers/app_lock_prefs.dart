@@ -1,15 +1,13 @@
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:movies/core/helpers/shared_prefs_helper.dart';
 
 class AppLockPreferences {
-  static const _key = 'app_lock_enabled';
+  static const String _appLockKey = 'app_lock_enabled';
 
   static Future<bool> isEnabled() async {
-    final prefs = await SharedPreferences.getInstance();
-    return prefs.getBool(_key) ?? false;
+    return await SharedPrefHelper.getBool(_appLockKey);
   }
 
-  static Future<void> setEnabled(bool value) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool(_key, value);
+  static Future<void> setEnabled(bool enabled) async {
+    await SharedPrefHelper.setData(_appLockKey, enabled);
   }
 }
