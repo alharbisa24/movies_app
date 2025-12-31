@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localization/flutter_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
+import 'package:movies/core/helpers/locales/app_locale.dart';
 import 'package:movies/core/helpers/spacing.dart';
 import 'package:movies/core/theming/colors.dart';
 import 'package:movies/watch_later/logic/cubit/watch_later_cubit.dart';
@@ -28,7 +30,7 @@ class WatchLaterBlocBuilder extends StatelessWidget {
             return setupSuccess(movies);
           },
           empty: () {
-            return setupEmpty();
+            return setupEmpty(context);
           },
           failure: (error) {
             return setupError(error);
@@ -52,7 +54,7 @@ Widget setupSuccess(movies) {
   );
 }
 
-Widget setupEmpty() {
+Widget setupEmpty(context) {
   return Center(
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -71,18 +73,18 @@ Widget setupEmpty() {
         ),
         verticalSpace(24),
         Text(
-          'No Movies Saved',
+          AppLocale.no_movies_title.getString(context),
           style: TextStyle(
             fontSize: 22.sp,
             fontWeight: FontWeight.bold,
             color: Colors.black87,
           ),
-        ),
+        ), 
         verticalSpace(8),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 48.w),
           child: Text(
-            'Start adding movies to your watch later list',
+            AppLocale.no_movies_description.getString(context),
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 14.sp,

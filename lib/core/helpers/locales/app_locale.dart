@@ -26,6 +26,8 @@ class AppLocale {
   static const String removed_message = 'removed_message';
   static const String no_description = 'no_description';
   static const String unknown = 'unknown';
+  static const String no_movies_title = 'no_movies_title';
+  static const String no_movies_description = 'no_movies_description';
 
   // Home Page
   static const String upcoming_movies = 'upcoming_movies';
@@ -79,7 +81,7 @@ class AppLocale {
   static const String auth_error = 'auth_error';
   static const String auth_button_process = 'auth_button_process';
   static const String auth_button = 'auth_button';
-    static const String auth_body = 'auth_body';
+  static const String auth_body = 'auth_body';
 
   
 
@@ -109,6 +111,8 @@ class AppLocale {
         'removed_message': '%s has been removed from your watch later list.',
         'no_description': 'No description available',
         'unknown': 'Unknown',
+        'no_movies_title': 'No Movies Saved',
+        'no_movies_description': 'Start adding movies to your watch later list',
         
         // Home
         'upcoming_movies': 'Upcoming Movies',
@@ -191,6 +195,8 @@ class AppLocale {
         'removed_message': 'تمت إزالة %s من قائمة المشاهدة لاحقًا.',
         'no_description': 'لا يوجد وصف متاح',
         'unknown': 'غير معروف',
+        'no_movies_title': 'لا توجد أفلام محفوظة',
+        'no_movies_description': 'ابدأ في إضافة أفلام إلى قائمة المشاهدة لاحقًا',
         
         // Home
         'upcoming_movies': 'الأفلام القادمة',

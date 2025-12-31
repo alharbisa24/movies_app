@@ -213,6 +213,9 @@ class WatchLaterMovieCard extends StatelessWidget {
   }
 
   void _showRemoveDialog(BuildContext context, Movie movie) {
+    final removedTitle = AppLocale.removed.getString(context);
+    final removedMessage = AppLocale.removed_message.getString(context).replaceAll('%s', movie.title);
+    
     AwesomeDialog(
       context: context,
       dialogType: DialogType.question,
@@ -224,16 +227,7 @@ class WatchLaterMovieCard extends StatelessWidget {
       btnCancelOnPress: () {},
       btnOkOnPress: () async {
         await context.read<WatchLaterCubit>().removeFromWatchLater(movie.id);
-        
-        AwesomeDialog(
-          context: context,
-          dialogType: DialogType.success,
-          animType: AnimType.leftSlide,
-          title: AppLocale.removed.getString(context),
-          desc: AppLocale.removed_message.getString(context).replaceAll('%s', movie.title),
-          autoHide: Duration(seconds: 2),
-          onDismissCallback: (type) {},
-        ).show();
+
       },
       btnCancelColor: Colors.grey.shade400,
       btnOkColor: AppColors.primaryColor,
