@@ -70,7 +70,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     ], isDark),
                     verticalSpace(32),
                   ],
-                ),
+                ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.3, end: 0, duration: 400.ms),
               ),
             ),
           ],
