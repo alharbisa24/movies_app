@@ -80,7 +80,7 @@ A modern Flutter application for browsing movies, integrated with **TMDB (The Mo
 ![changelang](https://raw.githubusercontent.com/alharbisa24/movies_app/master/assets/screenshots/change_language.png)
 
 ## Change Theme
-![changetheme](https://raw.githubusercontent.com/alharbisa24/movies_app/master/assets/screenshots/light_cange_theme.png)
+![changetheme](https://raw.githubusercontent.com/alharbisa24/movies_app/master/assets/screenshots/light_change_theme.png)
 
 ## Search
 ![search](https://raw.githubusercontent.com/alharbisa24/movies_app/master/assets/screenshots/light_search.png)
